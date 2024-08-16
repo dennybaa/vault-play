@@ -3,7 +3,7 @@ import argo_cd.v1alpha1
 
 app = v1alpha1.Application {
     metadata: {
-        name: "vault-app"
+        name: "vault-crossplane-provider"
         namespace: "argocd"
     }
     spec: {
@@ -13,7 +13,7 @@ app = v1alpha1.Application {
             namespace: "crossplane-system"
         }
         source: {
-            path: "manifests/vault"
+            path: "manifests/vault/crossplane-provider.yaml"
             repoURL: "https://github.com/dennybaa/vault-play.git"
         }
         syncPolicy.automated: {}
