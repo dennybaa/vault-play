@@ -1,7 +1,7 @@
 import manifests
 import argo_cd.v1alpha1
 
-app = v1alpha1.Application {
+cp = v1alpha1.Application {
     metadata: {
         name: "crossplane-providers"
         namespace: "argocd"
@@ -20,4 +20,23 @@ app = v1alpha1.Application {
     }
 }
 
-manifests.yaml_stream([app])
+play = v1alpha1.Application {
+    metadata: {
+        name: "vault"
+        namespace: "argocd"
+    }
+    spec: {
+        project: "default"
+        destination: {
+            name: "in-cluster"
+            namespace: "crossplane-system"
+        }
+        source: {
+            path: "manifests/vault"
+            repoURL: "https://github.com/dennybaa/vault-play.git"
+        }
+        syncPolicy.automated: {}
+    }
+}
+
+manifests.yaml_stream([cp, play])

@@ -16,7 +16,7 @@ pvc = v1beta1.ProviderConfig {
         namespace: "crossplane-system"
     }
     spec: {
-        address: "vault.vault-system"
+        address: "http://vault.vault-system:8200"
         credentials: {
             source: "Secret"
             secretRef: {
