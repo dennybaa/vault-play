@@ -3,14 +3,19 @@
     name = "argo-cd"
     full_name = "argo-cd_0.1.1"
     version = "0.1.1"
+  [dependencies.crossplane]
+    name = "crossplane"
+    full_name = "crossplane_1.16.0"
+    version = "1.16.0"
+  [dependencies.crossplane-provider-vault]
+    name = "crossplane-provider-vault"
+    full_name = "crossplane-provider-vault_1.0.0"
+    version = "1.0.0"
+    sum = "8+dn/hkuYDoKbpMFoIDPpki5RgCiMoeTf4y+abJ1k5g="
   [dependencies.k8s]
     name = "k8s"
     full_name = "k8s_1.28"
     version = "1.28"
-    sum = "aTxPUVZyr9MdiB3YdiY/8pCh9sC55yURnZdGlJsKG6Q="
-    reg = "ghcr.io"
-    repo = "kcl-lang/k8s"
-    oci_tag = "1.28"
   [dependencies.pathlib]
     name = "pathlib"
     full_name = "pathlib_0.1.0"

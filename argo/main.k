@@ -8,7 +8,10 @@ app = v1alpha1.Application {
     }
     spec: {
         project: "default"
-        destination.name: "in-cluster"
+        destination: {
+            name: "in-cluster"
+            namespace: "crossplane-system"
+        }
         source: {
             path: "manifests/vault"
             repoURL: "https://github.com/dennybaa/vault-play.git"
