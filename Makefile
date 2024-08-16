@@ -1,7 +1,9 @@
 .PHONY: all argo
 
-all:
-	@kcl run vault/ | tee manifests/vault/vault.yaml
+all: providers
+
+providers:
+	@kcl run vault/providers.k | tee manifests/crossplane-providers/vault-provider.yaml
 
 argo:
 	@kcl run argo/
