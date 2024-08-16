@@ -1,0 +1,15 @@
+apiVersion: vault.vault.upbound.io/v1alpha1
+kind: Policy
+metadata:
+  name: test-policy
+  namespace: crossplane-system
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    name: test-policy
+    namespace: vault-system
+    policy: "\n    path \"my-team/data/my/nodes/*\"\n    {\n        capabilities = [\"read\"]\n    }\n    "
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: vault-provider-config
