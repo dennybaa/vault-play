@@ -20,7 +20,7 @@ spec:
   address: http://vault.vault-system:8200
   credentials:
     secretRef:
-      key: token
+      key: credentials
       name: vault-provider-secret
       namespace: crossplane-system
     source: Secret
