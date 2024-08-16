@@ -20,7 +20,7 @@ pvc = v1beta1.ProviderConfig {
         credentials: {
             source: "Secret"
             secretRef: {
-                key: "token"
+                key: "credentials"
                 name: "vault-provider-secret"
                 namespace: "crossplane-system"
             }
