@@ -1,4 +1,4 @@
-.PHONY: all providers vault
+.PHONY: all providers vault argo
 
 all: providers vault
 

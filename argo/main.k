@@ -35,7 +35,7 @@ play = v1alpha1.Application {
             path: "manifests/vault"
             repoURL: "https://github.com/dennybaa/vault-play.git"
         }
-        syncPolicy.automated: {}
+        syncPolicy.automated: {prune: True}
     }
 }
 
